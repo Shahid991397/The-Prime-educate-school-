@@ -1,0 +1,116 @@
+import React from 'react';
+import { GraduationCap, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+
+const Footer = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <footer className="bg-gray-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* School Info */}
+          <div>
+            <div className="flex items-center space-x-2 mb-4">
+              <GraduationCap className="h-8 w-8 text-yellow-500" />
+              <span className="text-xl font-bold">The Prime Educate School</span>
+            </div>
+            <p className="text-gray-300 mb-4 leading-relaxed">
+              Committed to excellence in education, nurturing minds and building character for over 25 years.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-400 hover:text-yellow-500 transition-colors">
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-yellow-500 transition-colors">
+                <Twitter className="h-5 w-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-yellow-500 transition-colors">
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-yellow-500 transition-colors">
+                <Linkedin className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              {['about', 'programs', 'faculty', 'admissions'].map((item) => (
+                <li key={item}>
+                  <button
+                    onClick={() => scrollToSection(item)}
+                    className="text-gray-300 hover:text-yellow-500 transition-colors capitalize"
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Academic Programs */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Academic Programs</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li>Elementary School</li>
+              <li>Middle School</li>
+              <li>High School</li>
+              <li>STEM Programs</li>
+              <li>Arts & Music</li>
+              <li>Sports Programs</li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Contact Information</h3>
+            <div className="space-y-3">
+              <div className="flex items-start space-x-3">
+                <MapPin className="h-5 w-5 text-yellow-500 mt-0.5 flex-shrink-0" />
+                <div className="text-gray-300 text-sm">
+                  123 Education Street<br />
+                  Knowledge City, State 12345
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone className="h-5 w-5 text-yellow-500 flex-shrink-0" />
+                <div className="text-gray-300 text-sm">(555) 123-4567</div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="h-5 w-5 text-yellow-500 flex-shrink-0" />
+                <div className="text-gray-300 text-sm">info@primeeducate.edu</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <div className="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2024 The Prime Educate School. All rights reserved.
+          </div>
+          <div className="flex space-x-6 text-sm">
+            <a href="#" className="text-gray-400 hover:text-yellow-500 transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="text-gray-400 hover:text-yellow-500 transition-colors">
+              Terms of Service
+            </a>
+            <a href="#" className="text-gray-400 hover:text-yellow-500 transition-colors">
+              Accessibility
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
